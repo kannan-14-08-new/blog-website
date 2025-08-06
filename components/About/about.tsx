@@ -1,6 +1,7 @@
 import Image from "next/image";
 import * as motion from "motion/react-client";
-import { Github, Linkedin, Twitter, X } from "lucide-react";
+import { Github, Linkedin, Twitter } from "lucide-react";
+import Link from "next/link";
 
 export default function AboutMain() {
   return (
@@ -59,7 +60,6 @@ export default function AboutMain() {
               whileInView={{ opacity: 1, x: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1.1 }}
-              
               className="text-center lg:text-left"
             >
               <div className="space-y-8">
@@ -105,12 +105,13 @@ export default function AboutMain() {
                       "Technology Trends",
                       "Digital Craftsmanship",
                     ].map((topic) => (
-                      <span
+                      <Link
                         key={topic}
-                        className="px-4 py-2 border-2  text-muted-foreground cursor-pointer transition-all duration-300 rounded-full text-sm"
+                        href={"/categories"}
+                        className="px-4 py-2 border-2  text-muted-foreground hover:text-foreground cursor-pointer transition-all duration-300 rounded-full text-sm"
                       >
                         {topic}
-                      </span>
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -121,25 +122,27 @@ export default function AboutMain() {
                     Lets Connect
                   </h3>
                   <div className="flex space-x-4 items-center">
-                    <a
-                      href="#"
+                    <Link
+                      href="https://x.com/"
+                      target="_blank"
                       className="text-muted-foreground hover:text-blue-400 transition-colors flex items-center gap-1.5"
                     >
-                      <Twitter/> Twitter
-                    </a>
-                    <a
-                      href="#"
+                      <Twitter /> Twitter
+                    </Link>
+                    <Link
+                      target="_blank"
+                      href="https://linkedin.com/"
                       className="text-muted-foreground hover:text-blue-400 transition-colors flex items-center gap-1.5"
                     >
-                      <Linkedin/> LinkedIn
-                    </a>
-                    <a
-                      href="#"
+                      <Linkedin /> LinkedIn
+                    </Link>
+                    <Link
+                      target="_blank"
+                      href="https://github.com/"
                       className="text-muted-foreground hover:text-blue-400 transition-colors  flex items-center gap-1.5"
                     >
-                     <Github/> GitHub
-                    </a>
-                   
+                      <Github /> GitHub
+                    </Link>
                   </div>
                 </div>
               </div>

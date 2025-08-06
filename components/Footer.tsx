@@ -6,22 +6,22 @@ import { Button } from "./ui/button";
 const socialLinks = [
   {
     icon: Twitter,
-    href: "#",
+    href: "https://x.com/",
     label: "Twitter",
   },
   {
     icon: Github,
-    href: "#",
+    href: "https://github.com/",
     label: "GitHub",
   },
   {
     icon: Linkedin,
-    href: "#",
-    label: "LinkedIn",
+    href: "https://www.linkedin.com/feed/",
+    label: "Linkedin",
   },
   {
     icon: Instagram,
-    href: "#",
+    href: "https://www.instagram.com/",
     label: "Instagram",
   },
 ];

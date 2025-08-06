@@ -1,18 +1,21 @@
+"use client";
+
+import { notFound, useParams } from "next/navigation";
 import { featuredPosts } from "@/lib/data";
 import { formatToHyphenated } from "@/lib/utils";
 import Image from "next/image";
-import { notFound } from "next/navigation";
-import * as motion from "motion/react-client";
+import { motion } from "framer-motion"
 
-interface PageProps {
-  params: { slug: string };
-};
 
-export default function BlogDetail({ params }: PageProps) {
+export default function BlogDetail() {
+  const params = useParams();
+  const slug = params?.slug as string;
+
   const blog = featuredPosts.find(
-    (post) => formatToHyphenated(post.title) === params.slug
+    (post) => formatToHyphenated(post.title) === slug
   );
-  if (!blog) return notFound();
+
+  if (!blog) return notFound
 
   return (
     <motion.div
@@ -20,7 +23,7 @@ export default function BlogDetail({ params }: PageProps) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
     >
-      <div className="p-6 sm:p-10 mx-auto bg-background rounded-xl shadow-md transition-all duration-300 hover:shadow-xl w-full">
+      <div className="p-6 sm:p-10 mx-auto bg-background rounded-xl shadow-md transition-all duration-300 hover:shadow-xl w-full ">
         <h1 className="text-4xl sm:text-5xl font-extrabold mb-6 leading-tight text-foreground">
           {blog.title}
         </h1>

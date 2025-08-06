@@ -1,16 +1,17 @@
+"use client"
+
 import Image from "next/image";
-import { notFound } from "next/navigation";
+import { notFound, useParams } from "next/navigation";
 import * as motion from "motion/react-client";
 import { AllCategories } from "@/lib/allCategories";
 import { formatToHyphenated } from "@/lib/utils";
 
-interface PageProps {
-  params: { slug: string };
-};
-
-export default function BlogDetail({ params }: PageProps) {
+export default function BlogDetail() {
+  
+ const params = useParams()
+ const slug = params?.slug as string;
   const categories = AllCategories.find(
-    (post) => formatToHyphenated(post.name) === params.slug
+    (post) => formatToHyphenated(post.name) === slug
   );
   if (!categories) return notFound();
 
