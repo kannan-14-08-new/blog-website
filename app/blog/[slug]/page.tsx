@@ -5,6 +5,7 @@ import { featuredPosts } from "@/lib/data";
 import { formatToHyphenated } from "@/lib/utils";
 import Image from "next/image";
 import { motion } from "framer-motion"
+import { Share } from "lucide-react";
 
 
 export default function BlogDetail() {
@@ -58,12 +59,12 @@ export default function BlogDetail() {
           </div>
 
           <div className="space-x-2">
-            <button className="text-blue-600 hover:text-blue-800 text-sm underline underline-offset-2 font-bold">
-              Share
+            
+            <button className="text-blue-600 font-bold text-2xl font-sans hover:text-blue-500 transition-all duration-200 cursor-pointer border-2 p-1.5 
+            flex items-center gap-2 rounded-[10px]">
+              <Share/> Share
             </button>
-            <button className="text-gray-600 hover:text-muted-foreground text-sm underline underline-offset-2 font-bold font-serif">
-              Comment
-            </button>
+            
           </div>
         </div>
       </div>
