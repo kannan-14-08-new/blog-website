@@ -5,6 +5,7 @@ import { notFound, useParams } from "next/navigation";
 import * as motion from "motion/react-client";
 import { AllCategories } from "@/lib/allCategories";
 import { formatToHyphenated } from "@/lib/utils";
+import { Share } from "lucide-react";
 
 export default function BlogDetail() {
   
@@ -22,7 +23,7 @@ export default function BlogDetail() {
       transition={{ duration: 0.8 }}
     >
       <div className="p-6 sm:p-10 mx-auto bg-background rounded-xl shadow-md transition-all duration-300 hover:shadow-xl w-full">
-        <h1 className="text-4xl sm:text-5xl font-extrabold mb-6 leading-tight text-foreground">
+        <h1 className="text-2xl sm:text-5xl font-extrabold mb-6 leading-tight text-foreground">
           {categories.name} {categories.icon}
         </h1>
 
@@ -55,11 +56,9 @@ export default function BlogDetail() {
           </div>
 
           <div className="space-x-2">
-            <button className="text-blue-600 hover:text-blue-800 text-sm underline underline-offset-2 font-bold">
-              Share
-            </button>
-            <button className="text-gray-600 hover:text-muted-foreground text-sm underline underline-offset-2 font-bold font-serif">
-              Comment
+          <button className="text-blue-600 font-bold text-2xl font-sans hover:text-blue-500 transition-all duration-200 cursor-pointer border-2 p-1.5 
+            flex items-center gap-2 rounded-[10px]">
+              <Share/> Share
             </button>
           </div>
         </div>
