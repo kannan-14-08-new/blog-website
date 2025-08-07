@@ -23,7 +23,7 @@ export default function BlogDetail() {
       transition={{ duration: 0.8 }}
     >
       <div className="p-6 sm:p-10 mx-auto bg-background rounded-xl shadow-md transition-all duration-300 hover:shadow-xl w-full">
-        <h1 className="text-2xl sm:text-5xl font-extrabold mb-6 leading-tight text-foreground">
+        <h1 className="text-3xl md:text-5xl sm:text-3xl font-extrabold mb-6 leading-tight text-foreground">
           {categories.name} {categories.icon}
         </h1>
 
